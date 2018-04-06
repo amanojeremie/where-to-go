@@ -1,0 +1,11 @@
+{
+  "name": "edu.truman.wheretogo",
+  "displayName": "Where To Go",
+  "version": "1.0.0",
+  "description": "Rate and locate restrooms",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brownies @ Truman"
+}
