@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -28,22 +29,72 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"-->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <style>
+            input{
+                width: 100%;
+                height: 100%;
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+            }
+            ul li{
+                list-style-type: none;
+                margin: 5px;
+                color: white;
+                text-shadow: 2px 2px 7px grey;
+                font-size: 63px !important;
+                text-align: center;
+                display: inline-block;
+            }
+            ul li.active, ul li.secondary-active{
+                color: yellow;
+            }
+
+            input[type = "radio"]{
+                display: none;
+            }
+            header{
+                width: 100%;
+            }
+        </style>
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <header align = "center">
+            NAME OF PLACE
+        </header>
+        <form id>
+            <input type="text">
+            <br>
+            <header>
+                RATE THE TOILET
+            </header>
+            <ul>
+                <li><label for = "rating_1"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_1" value = "1"/></li>
+                <li><label for = "rating_2"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_2" value = "2"/></li>
+                <li><label for = "rating_3"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_3" value = "3"/></li>
+                <li><label for = "rating_4"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_4" value = "4"/></li>
+                <li><label for = "rating_5"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_5" value = "5"/></li>
+            </ul>
+            <input type="submit">
+        </form>
+        <script>
+            $('li').on('click',function(){
+                $('li').removeClass('active');
+                $('li').removeClass('secondary-active');
+                $(this).addClass('active');
+                $(this).prevAll().addClass('secondary-active');
+            })    
+        </script>
+
     </body>
 </html>

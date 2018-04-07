@@ -113,3 +113,21 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.li
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    display: flex;
+}
+#page{
+    display: table;
+    width: 100%;
+}
+#page-form{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
