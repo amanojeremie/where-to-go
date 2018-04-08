@@ -160,7 +160,7 @@ ul li.active, ul li.secondary-active{
 input[type = "radio"]{
     display: none;
 }
-input[type = "submit"]{
+a.submit {
     font-family: "Bookman Old Style";
     font-weight: bolder;
     background-color: #0099ff;
@@ -168,6 +168,7 @@ input[type = "submit"]{
     margin: 0px;
     padding: 5px;
     font-size: 45px;
+    text-align: center;
 }
 .checked{
     color: yellow;

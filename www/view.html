@@ -39,7 +39,7 @@
         <title>Hello World</title>
     </head>
     <body>
-        <h1>
+        <h1 id="name">
             Violette Hall
         </h1>
         <form id>
@@ -65,7 +65,8 @@
                 <li><label for = "rating_4"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_4" value = "4"/></li>
                 <li><label for = "rating_5"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_5" value = "5"/></li>
             </ul>
-            <input type="submit">
+            <a class="submit" href="javascript:submit()">Submit</a>
+            <a class="submit" href="javascript:navigatePop()">Go Back</a>
         </form>
         <script>
             $('li').on('click',function(){
@@ -73,7 +74,14 @@
                 $('li').removeClass('secondary-active');
                 $(this).addClass('active');
                 $(this).prevAll().addClass('secondary-active');
-            })    
+            });
+            var params = getParameters();
+            $.getJSON('http://some-dood.truman.edu:8000/toilet/' + params.id, function(response) {
+                console.log(response);
+                if(response.toilet != null) {
+                    $("#name").text(response.toilet.name);
+                }
+            });
         </script>
 
     </body>

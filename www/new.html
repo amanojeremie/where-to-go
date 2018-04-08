@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <title>Hello World</title>
+    </head>
+    <body>  
+        <h1>
+            Location Name:
+        </h1>
+        <form>
+            <input type="text" name="toiletName">
+            <br>
+            <h2>
+                Rate this Restroom:
+            </h2>
+            <ul>
+                <li><label for = "rating_1"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_1" value = "1"/></li>
+                <li><label for = "rating_2"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_2" value = "2"/></li>
+                <li><label for = "rating_3"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_3" value = "3"/></li>
+                <li><label for = "rating_4"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_4" value = "4"/></li>
+                <li><label for = "rating_5"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_5" value = "5"/></li>
+            </ul>
+            <a class="submit" href="javascript:submit()">Submit</a>
+            <a class="submit" href="javascript:navigatePop()">Cancel</a>
+        </form>
+        <script>
+            $('li').on('click',function(){
+                $('li').removeClass('active');
+                $('li').removeClass('secondary-active');
+                $(this).addClass('active');
+                $(this).prevAll().addClass('secondary-active');
+            })    
+        
+            function submit() {
+                var params = getParameters();
+                var toilet = {
+                    name: $("input[name=toiletName]").val(),
+                    lat: params.lat,
+                    lng: params.lng,
+                    score: $("input[name=ratings]:checked").val()
+                };
+                $.ajax({
+                    url: 'http://some-dood.truman.edu:8000/toilet',
+                    data: JSON.stringify(toilet),
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    method: 'POST',
+                    success: function(resp) {
+                        console.log(resp);
+                        navigatePop();
+                    }
+                })
+            }
+        </script>
+
+    </body>
+</html>
