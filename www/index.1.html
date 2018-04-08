@@ -29,7 +29,6 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-
         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -39,16 +38,26 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <title>Hello World</title>
     </head>
-    <body>  
+    <body>
         <h1>
-            Location Name:
+            Violette Hall
         </h1>
         <form id>
-            <input type="text">
             <br>
-            <h2>
+            <h3>
+                Current rating:
+            </h3>
+                <br>
+            <h4>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </h4>
+            <h3>
                 Rate this Restroom:
-            </h2>
+            </h3>
             <ul>
                 <li><label for = "rating_1"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_1" value = "1"/></li>
                 <li><label for = "rating_2"><i class = "fa fa-star" aria-hidden = "true"></i></label><input type ="radio" name = "ratings" id = "rating_2" value = "2"/></li>

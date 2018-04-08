@@ -24,19 +24,10 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+    background-image: url('2. bathroom bg.png');
+    
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family: "Bookman Old Style";
     font-size:12px;
     height:100%;
     margin:0px;
@@ -70,14 +61,32 @@ body {
 }
 
 h1 {
-    font-size:24px;
-    font-weight:normal;
+    font-family: "Bookman Old Style";
+    font-size: 60px;
+    font-weight: bolder;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
 }
-
+h2 {
+    font-family: "Bookman Old Style";
+    font-size:45px;
+    font-weight: 500;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+h3 {
+    font-family: "Bookman Old Style";
+    font-size:45px;
+    font-weight: 500;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -119,15 +128,55 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateY(180deg);
+    transform: translate(-50%, -50%) ;
     display: flex;
 }
-#page{
-    display: table;
+input{
     width: 100%;
 }
-#page-form{
-    display: table-cell;
+input[type = "text"]{
+    width: 97%;
     text-align: center;
-    vertical-align: middle;
+    margin: .8%;
+    font-size: 65px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style-type: none;
+    margin: 5px;
+    color: white;
+    text-shadow: 2px 2px 7px grey;
+    font-size: 63px !important;
+    text-align: center;
+    display: inline-block;
+}
+ul li.active, ul li.secondary-active{
+    color: yellow;
+}
+
+input[type = "radio"]{
+    display: none;
+}
+input[type = "submit"]{
+    font-family: "Bookman Old Style";
+    font-weight: bolder;
+    background-color: #0099ff;
+    color: white;
+    margin: 0px;
+    padding: 5px;
+    font-size: 45px;
+}
+.checked{
+    color: yellow;
+}
+h4 {
+    font-size:45px;
+    font-weight: 500;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
 }
